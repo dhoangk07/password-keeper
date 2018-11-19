@@ -1,0 +1,22 @@
+<table>
+  <thead>
+    <tr>
+      <th>No</th>
+      <th>Password</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @passwords.each_with_index do |password,index| %>
+      <tr>
+        <td><%= index +1 %></td>
+        <td><%= password.pass %></td>
+        <td><%= link_to 'Show', password_path(password) %></td>
+        <td><%= link_to "Edit", edit_password_path(password)%></td>
+        <td><%= link_to "Destroy", password_path(password),
+                method: :delete,
+                data: { confirm: "Are you sure? "} %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
