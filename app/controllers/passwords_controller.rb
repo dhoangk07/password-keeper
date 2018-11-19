@@ -4,7 +4,7 @@ class PasswordsController < ApplicationController
   end
 
   def new
-    @password = Password.new
+    @password = current_user.passwords.build
   end
 
   def show
@@ -14,7 +14,7 @@ class PasswordsController < ApplicationController
   end
 
   def create
-    @password = Password.new
+    @password = current_user.passwords.build(password_params)
     if @password.save
       flash[:success] = "Created password successful"
       redirect_to passwords_path
@@ -43,6 +43,6 @@ class PasswordsController < ApplicationController
   end
 
   def password_params
-    params.require(:passwords).permit(:pass, :user_id)
+    params.require(:password).permit(:pass, :user_id)
   end
 end
