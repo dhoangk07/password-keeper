@@ -10,9 +10,6 @@ class PasswordsController < ApplicationController
   def show
   end
 
-  def index
-  end
-
   def create
     @password = current_user.passwords.build(password_params)
     if @password.save
