@@ -1,10 +1,10 @@
 <div class="container">
   <h3 class="text-capitalize text-success text-center">Listing of Passwords</h3>
 
-<table class="table table-striped">
+<table class="table">
   <thead class="text-center text-primary"> 
     <tr class="border-off">
-      <th>No</th>
+      <th class="pt-3">No</th>
       <th>App</th>
       <th>Password</th>
       <th>Action</th>
@@ -14,11 +14,14 @@
     <% @passwords.each_with_index do |password,index| %>
       <tr class="text-center text-capitalize">
         <td><%= index + 1 %></td>
-        <td><%= password.app %></td>
-        <td><%= password.pass %></td>
+        <td class="pt-3"><%= password.app  %></td>
+        <td class="text-right"><%= render "copy_btn",password: password %></td>
         <td><%= render 'action', password: password %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
+
+
+
 

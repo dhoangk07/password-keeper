@@ -1,0 +1,25 @@
+<div class="input-group">
+  <div class=" col-7 px-0">
+    <input id="foo-<%= password.id %>" value=" <%= password.pass %>" class="form-control" readonly >
+  </div>
+  <button class="btn input-group-text btn-primary" data-clipboard-target="#foo-<%= password.id %>" onclick="myFunction()">
+    <i class="fa fa-eye"></i>
+  </button>
+  <button class="btn input-group-text btn-primary" data-clipboard-target="#foo-<%= password.id %>">
+      Copy
+  </button>
+</div>
+
+  
+
+<script type="text/javascript">
+  new ClipboardJS('.btn');
+  function myFunction() {
+    var x = document.getElementById("foo-<%= password.id %>");
+    if (x.type === "password") {
+        x.type = "text";
+    } else {
+        x.type = "password";
+    }
+  }
+</script>
