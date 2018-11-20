@@ -32,6 +32,7 @@ class PasswordsController < ApplicationController
 
   def destroy
     @password.destroy
+    flash[:danger] = "Deleted password successful"
     redirect_to passwords_path
   end
   private
