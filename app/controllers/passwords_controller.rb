@@ -39,7 +39,7 @@ class PasswordsController < ApplicationController
     @password = Password.find(params[:id])
   end
 
-  def password_params
-    params.require(:password).permit(:pass, :user_id)
-  end
+    def password_params
+      params.require(:password).permit(:app, :pass, :user_id)
+    end
 end
