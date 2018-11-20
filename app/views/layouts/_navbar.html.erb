@@ -8,7 +8,6 @@
     <div class="float-right">
       <% if user_signed_in? %>
         <div class="btn-group">
-          <a href="#"><%=link_to 'New Password', new_password_path, class: 'dropdown-item text-success'%></a>
           <a href="#"><%=link_to 'Log Out', destroy_user_session_path, method: :delete, class: 'dropdown-item text-danger'%></a>
         </div>
       <% else %>
