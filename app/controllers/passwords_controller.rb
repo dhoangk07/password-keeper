@@ -14,7 +14,7 @@ before_action :find_password, only: %i[show edit update destroy]
   def create
     @password = current_user.passwords.build(password_params)
     if @password.save
-      flash[:success] = "Created password successful"
+      flash[:success] = "Password of #{@password.app} already created"
       redirect_to passwords_path
     else
       render :new
@@ -28,7 +28,7 @@ before_action :find_password, only: %i[show edit update destroy]
   def update
     @passwords = Password.update_atttribute(password_params)
     if @password.save
-      flash[:success] = "Updated password successful"
+      flash[:success] = "Password of #{@password.app} already updated"
       redirect_to passwords_path
     else
       render :edit
@@ -37,7 +37,7 @@ before_action :find_password, only: %i[show edit update destroy]
 
   def destroy
     @password.destroy
-    flash[:danger] = "Deleted password successful"
+    flash[:danger] = "Password of #{@password.app} already deleted"
     redirect_to passwords_path
   end
   private
