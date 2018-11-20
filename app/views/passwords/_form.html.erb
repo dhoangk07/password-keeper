@@ -1,6 +1,7 @@
 <div class="col-8 offset-2">
   <%= simple_form_for @password do |f| %>
-    <%= f.input :pass, label: false, placeholder: "Please input your password" %>
+    <%= f.input :app, label: false, placeholder: "Please input App"  %>
+    <%= f.input :pass, label: false, placeholder: "Please input Password" %>
     <%= f.submit "Create", class: "btn btn-danger btn-block btn-lg" %>
   <% end %>
 </div>
