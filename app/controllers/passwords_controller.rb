@@ -1,4 +1,5 @@
 class PasswordsController < ApplicationController
+before_action :find_password, only: %i[show edit update destroy]
   def index
     @passwords = Password.all
   end
@@ -20,6 +21,10 @@ class PasswordsController < ApplicationController
     end
   end
 
+  def edit
+    
+  end
+
   def update
     @passwords = Password.update_atttribute(password_params)
     if @password.save
@@ -36,9 +41,9 @@ class PasswordsController < ApplicationController
     redirect_to passwords_path
   end
   private
-  def find_password
-    @password = Password.find(params[:id])
-  end
+    def find_password
+      @password = Password.find(params[:id])
+    end
 
     def password_params
       params.require(:password).permit(:app, :pass, :user_id)
