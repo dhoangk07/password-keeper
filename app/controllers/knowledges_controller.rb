@@ -42,7 +42,7 @@ class KnowledgesController < ApplicationController
   
   private
     def set_knowledge
-      @knowledge = knowledge.find(params[:id])
+      @knowledge = Knowledge.find(params[:id])
     end
     
     def knowledge_params
