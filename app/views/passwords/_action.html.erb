@@ -1,9 +1,11 @@
-<%= link_to password_path(password) do %>
-  <button class="btn badge badge-primary" title="Show"><i class="fa fa-eye"></i></button>
-<% end %>
-<%= link_to edit_password_path(password) do %>
-  <button class="btn badge badge-primary" title="Edit" ><i class="fa fa-edit"></i></button>
-<% end %>
-<%= link_to password_path(password), method: :delete, data: { confirm: "Are you sure? "} do %>
-  <button class="btn badge badge-primary" title="Destroy"><i class="fa fa-trash"></i></button> 
+<% if password.user == current_user %>
+  <%= link_to password_path(password) do %>
+    <button class="btn badge badge-primary" title="Show"><i class="fa fa-eye"></i></button>
+  <% end %>
+  <%= link_to edit_password_path(password) do %>
+    <button class="btn badge badge-primary" title="Edit" ><i class="fa fa-edit"></i></button>
+  <% end %>
+  <%= link_to password_path(password), method: :delete, data: { confirm: "Are you sure? "} do %>
+    <button class="btn badge badge-primary" title="Destroy"><i class="fa fa-trash"></i></button> 
+  <% end %>
 <% end %>
