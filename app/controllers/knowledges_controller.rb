@@ -1,7 +1,7 @@
 class KnowledgesController < ApplicationController
   before_action :find_knowledge, only: %i[edit update show destroy]
   def index
-    @knowledge = Knowledge.all
+    @knowledges = Knowledge.all
   end
   
   def new
