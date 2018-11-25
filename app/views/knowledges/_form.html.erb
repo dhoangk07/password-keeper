@@ -1,0 +1,7 @@
+<div class="col-8 offset-2">
+  <%= simple_form_for @knowledge do |f| %>
+    <%= f.input :title, label: false, placeholder: "Please input title" %>
+    <%= f.input :content, label: false, placeholder: "Please input content" %>
+    <%= f.submit 'Create', class: "btn btn-primary btn-block btn-info" %>
+  <% end %>
+</div>

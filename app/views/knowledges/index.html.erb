@@ -1,0 +1,23 @@
+<div class="container-fluid">
+  
+  <% @knowledges.each do |knowledge| %>
+    <div class="col-4 px-2">
+      <div class="card-deck py-2 px-0">
+        <div class="card">
+            <div class="card-body">
+              <div class='row ml-3 mt-2' data-title="<%=knowledge.title%>">
+                <div class="icon">
+                </div>
+                <div class='knowledge-content ml-3'>
+                  <h5 class="card-title my-0 "><%=knowledge.title.truncate(20, separator: ' ') %></h5> 
+                  <p class="knowledge-content my-2 <%=knowledge.content%>"><%=knowledge.content %></p>
+                  <div class="knowledge-topics">
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
